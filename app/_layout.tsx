@@ -1,6 +1,6 @@
 import {SplashScreen, Stack} from "expo-router";
-import { NativeWindStyleSheet } from "nativewind";
-import { useFonts } from "expo-font"
+import {NativeWindStyleSheet} from "nativewind";
+import {useFonts} from "expo-font"
 import {useEffect} from "react";
 
 NativeWindStyleSheet.setOutput({
@@ -29,11 +29,12 @@ const RootLayout = () => {
 
     if (!fontsLoaded && !error) return null;
 
-  return (
-    <Stack>
-      <Stack.Screen name="index" options={{headerShown: false}} />
-    </Stack>
-  );
+    return (
+        <Stack>
+            <Stack.Screen name="index" options={{headerShown: false}}/>
+            <Stack.Screen name="(tabs)" options={{headerShown: false}}/>
+        </Stack>
+    );
 }
 
 export default RootLayout;
