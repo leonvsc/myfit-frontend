@@ -1,4 +1,4 @@
-name: Trigger auto deployment for myfit-frontend
+name: CD
 
 # When this action will be executed
 on:
@@ -8,7 +8,7 @@ on:
       [ main ]
     paths:
     - '**'
-    - '.github/workflows/myfit-frontend-AutoDeployTrigger-d3f4a2eb-8a88-490b-91d4-c912479d5b1c.yml'
+    - '.github/workflows/cd.yml'
 
   # Allow manual trigger 
   workflow_dispatch:      
@@ -22,10 +22,10 @@ jobs:
 
     steps:
       - name: Checkout to the branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Azure Login
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           client-id: ${{ secrets.MYFITFRONTEND_AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.MYFITFRONTEND_AZURE_TENANT_ID }}
