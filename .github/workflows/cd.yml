@@ -3,7 +3,7 @@ name: CD
 # When this action will be executed
 on:
   # Automatically trigger it when detected changes in repo
-  pull:
+  push:
     branches: 
       [ main ]
     paths:
