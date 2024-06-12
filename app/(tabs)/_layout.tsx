@@ -10,8 +10,6 @@ interface TabIconProps {
     focused: boolean;
 }
 
-// FIXME: Icons aren't showing up on iOS devices
-
 const TabIcon: React.FC<TabIconProps> = ({ icon, name, color, focused }) => {
     return (
         <View  className="items-center justify-center">
