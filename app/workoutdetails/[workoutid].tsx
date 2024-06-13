@@ -3,7 +3,7 @@ import React from "react";
 import {icons, images} from "../../constants";
 import {SafeAreaView} from "react-native-safe-area-context";
 import {Image} from "react-native";
-import {useLocalSearchParams} from "expo-router";
+import {router, useLocalSearchParams} from "expo-router";
 import CustomButton from "@/components/CustomButton";
 import ExerciseButton from "@/components/ExerciseButton";
 
@@ -17,6 +17,10 @@ const workoutDetails = {
     '5': { title: 'Full body', secondaryTitle: 'A full body workout', image: images.sportschool },
     '6': { title: 'Warming up', secondaryTitle: 'A warming up workout', image: images.sportschool },
     '7': { title: 'Cooling down', secondaryTitle: 'A cooling down workout', image: images.sportschool },
+};
+
+const navigateToDetails = (exerciseId: number) => {
+    router.push(`/exercisedetails/${exerciseId}`);
 };
 
 const WorkoutDetails = () => {
@@ -33,7 +37,7 @@ const WorkoutDetails = () => {
         );
     }
 
-    // TODO: Make API call to get exercises and put int in a flat list
+    // TODO: Make API call to get exercises and put it in a flat list
     return (
         <SafeAreaView className="mb-5">
             <ScrollView>
@@ -50,25 +54,25 @@ const WorkoutDetails = () => {
                 <Text className="font-pbold text-2xl mb-3 ml-5">Exercises</Text>
                     <View className="flex flex-row flex-wrap">
                         <View className="w-full">
-                            <ExerciseButton title="Bench press" handlePress={() => {
+                            <ExerciseButton title="Bench press" handlePress={() => {navigateToDetails(1)
                             }} containerStyles="" textStyles={undefined} isLoading={undefined} image={icons.dumbbell}/>
 
-                            <ExerciseButton title="Incline bench press" handlePress={() => {
+                            <ExerciseButton title="Incline bench press" handlePress={() => {navigateToDetails(2)
                             }} containerStyles="" textStyles={undefined} isLoading={undefined} image={icons.dumbbell}/>
 
-                            <ExerciseButton title="Decline bench press" handlePress={() => {
+                            <ExerciseButton title="Decline bench press" handlePress={() => {navigateToDetails(3)
                             }} containerStyles="" textStyles={undefined} isLoading={undefined} image={icons.dumbbell}/>
 
-                            <ExerciseButton title="Dumbbell fly" handlePress={() => {
+                            <ExerciseButton title="Dumbbell fly" handlePress={() => {navigateToDetails(4)
                             }} containerStyles="" textStyles={undefined} isLoading={undefined} image={icons.dumbbell}/>
 
-                            <ExerciseButton title="Chest press" handlePress={() => {
+                            <ExerciseButton title="Chest press" handlePress={() => {navigateToDetails(5)
                             }} containerStyles="" textStyles={undefined} isLoading={undefined} image={icons.dumbbell}/>
 
-                            <ExerciseButton title="Chest fly" handlePress={() => {
+                            <ExerciseButton title="Chest fly" handlePress={() => {navigateToDetails(6)
                             }} containerStyles="" textStyles={undefined} isLoading={undefined} image={icons.dumbbell}/>
 
-                            <ExerciseButton title="Chest dip" handlePress={() => {
+                            <ExerciseButton title="Chest dip" handlePress={() => {navigateToDetails(7)
                             }} containerStyles="" textStyles={undefined} isLoading={undefined} image={icons.dumbbell}/>
 
                             <ExerciseButton title="Push up" handlePress={() => {
