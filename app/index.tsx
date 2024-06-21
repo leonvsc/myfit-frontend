@@ -10,6 +10,8 @@ export default function Index() {
             <View className="items-center justify-center w-full min-h-[85vh] px-4">
                 <Text className="text-3xl font-bold">Welcome to MyFit</Text>
                 <CustomButton title="Continue to application" handlePress={() => router.push('/home')} containerStyles="mt-7 w-full" textStyles={undefined} isLoading={undefined} />
+                <CustomButton title="Login" handlePress={() => router.push('/login')} containerStyles="mt-7 w-full" textStyles={undefined} isLoading={undefined} />
+                <CustomButton title="Sign Up" handlePress={() => router.push('/signup')} containerStyles="mt-7 w-full" textStyles={undefined} isLoading={undefined} />
             </View>
         </ScrollView>
     </SafeAreaView>
