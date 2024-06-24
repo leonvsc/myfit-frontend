@@ -1,5 +1,9 @@
-import lion from '../assets/images/lion.png';
+import { ImageSourcePropType } from 'react-native';
 
-export default {
-  lion,
+const images: { [key: string]: ImageSourcePropType } = {
+  lion: require('../assets/images/lion.png'),
+  sportschool: require('../assets/images/sportschool.jpg'),
+  benchpress: require('../assets/images/benchpress.jpg'),
 };
+
+export default images;
