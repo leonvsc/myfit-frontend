@@ -3,6 +3,8 @@ import React from "react";
 import {SafeAreaView} from "react-native-safe-area-context";
 import {icons, images} from "../../constants";
 import {useLocalSearchParams} from "expo-router";
+import CategorieButton from "@/components/CategorieButton";
+import ExerciseDetailsButton from "@/components/ExerciseDetailsButton";
 
 
 // TODO: Mooier maken dmv buttons met aantal kg en herhalingen?
@@ -43,17 +45,26 @@ const ExerciseDetails = () => {
                         Details
                     </Text>
 
-                    <Text>
-                        5 herhalingen
+                    <View className="justify-center mr-5 ml-5 flex-row">
+                        <ExerciseDetailsButton title="Sets" handlePress={undefined} containerStyles="w-1/3"
+                                               textStyles={undefined} isLoading={undefined} icon={undefined}
+                                               number="5" />
+                        <ExerciseDetailsButton title="Reps" handlePress={undefined} containerStyles="w-1/3"
+                                               textStyles={undefined} isLoading={undefined} icon={undefined}
+                                               number="5" />
+                        <ExerciseDetailsButton title="Weight" handlePress={undefined} containerStyles="w-1/3"
+                                               textStyles={undefined} isLoading={undefined} icon={undefined}
+                                               number="5" />
+
+                    </View>
+                    <Text className="text-lg font-psemibold">
+                        Description
                     </Text>
 
-                    <Text>
-                        5 sets
+                    <Text className="font-pregular ">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et consectetur felis, quis gravida mi. Duis congue sem varius justo dignissim, eget lobortis mi facilisis. Donec at lobortis lacus, in hendrerit massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus sit amet efficitur lectus. Donec pellentesque sollicitudin maximus. Vivamus sed scelerisque ipsum.
                     </Text>
 
-                    <Text>
-                        5kg
-                    </Text>
                 </View>
             </View>
         </SafeAreaView>

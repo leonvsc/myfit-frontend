@@ -38,6 +38,7 @@ const WorkoutDetails = () => {
     }
 
     // TODO: Make API call to get exercises and put it in a flat list
+    // TODO: Only exercises needs to be scrollable
     return (
         <SafeAreaView className="mb-5">
             <ScrollView>
