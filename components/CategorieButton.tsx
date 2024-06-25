@@ -1,7 +1,7 @@
 import {TouchableOpacity, Text, Image, GestureResponderEvent, ImageSourcePropType} from "react-native";
 import React from "react";
-import {opacity} from "react-native-reanimated/lib/typescript/reanimated2/Colors";
 
+// TODO: Add type for props
 
 // @ts-ignore
 const CategorieButton = ({title, handlePress, containerStyles, textStyles, isLoading, icon}) => {
