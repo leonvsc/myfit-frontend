@@ -1,6 +1,7 @@
 import {TouchableOpacity, Text} from "react-native";
 import React from "react";
-import {opacity} from "react-native-reanimated/lib/typescript/reanimated2/Colors";
+
+// TODO: Add type for props
 
 // @ts-ignore
 const Button2 = ({title, handlePress, containerStyles, textStyles, isLoading}) => {

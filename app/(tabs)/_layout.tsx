@@ -3,7 +3,7 @@ import { View, Image, Text } from "react-native";
 import { icons } from "../../constants";
 import React from "react";
 
-interface TabIconProps {
+type TabIconProps = {
     icon: any;
     name: string;
     color: string;

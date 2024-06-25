@@ -1,6 +1,8 @@
 import {TouchableOpacity, Text, Image, GestureResponderEvent, ImageSourcePropType, View} from "react-native";
 import React from "react";
 
+// TODO: Add type for props.
+
 // @ts-ignore
 const WorkoutButton = ({title, secondaryTitle, handlePress, containerStyles, textStyles, isLoading, image}) => {
     return (

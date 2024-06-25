@@ -2,6 +2,7 @@ import {TouchableOpacity, Text, Image, GestureResponderEvent, ImageSourcePropTyp
 import React from "react";
 import {opacity} from "react-native-reanimated/lib/typescript/reanimated2/Colors";
 
+// TODO: Add type for props
 
 // @ts-ignore
 const ExerciseDetailsButton = ({title, number, handlePress, containerStyles, textStyles, isLoading, icon}) => {
