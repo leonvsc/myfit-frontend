@@ -27,20 +27,20 @@ const Signup = () => {
                     value={form.username}
                     handleChangeText={(value: any) => setForm({...form, username: value})}
                     otherStyles="mt-7"
-                    placeholder={undefined} />
+                    placeholder="Username" />
 
                 <FormField
                     title="Email"
                     value={form.email}
                     handleChangeText={(value: any) => setForm({...form, email: value})}
                     otherStyles="mt-7"
-                    keyboardType="email-address" placeholder={undefined} />
+                    keyboardType="email-address" placeholder="Email" />
 
                 <FormField
                     title="Password"
                     value={form.password}
                     handleChangeText={(value: any) => setForm({...form, password: value})}
-                    otherStyles="mt-7" placeholder={undefined} />
+                    otherStyles="mt-7" placeholder="Password" />
 
                 <CustomButton
                     title="Sign Up"

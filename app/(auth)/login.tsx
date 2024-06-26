@@ -26,13 +26,13 @@ const Login = () => {
                     value={form.email}
                     handleChangeText={(value: any) => setForm({...form, email: value})}
                     otherStyles="mt-7"
-                    keyboardType="email-address" placeholder={undefined} />
+                    keyboardType="email-address" placeholder="Email" />
 
                 <FormField
                     title="Password"
                     value={form.password}
                     handleChangeText={(value: any) => setForm({...form, password: value})}
-                    otherStyles="mt-7" placeholder={undefined} />
+                    otherStyles="mt-7"  placeholder="Password"/>
 
                 <CustomButton
                     title="Login"

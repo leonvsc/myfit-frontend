@@ -1,9 +1,15 @@
 import {TouchableOpacity, Text} from "react-native";
 import React from "react";
-import {opacity} from "react-native-reanimated/lib/typescript/reanimated2/Colors";
 
-// @ts-ignore
-const CustomButton = ({title, handlePress, containerStyles, textStyles, isLoading}) => {
+type CustomButtonProps = {
+    title: string,
+    handlePress: () => void,
+    containerStyles?: string,
+    textStyles?: string,
+    isLoading?: boolean
+}
+
+const CustomButton: React.FC<CustomButtonProps> = ({title, handlePress, containerStyles, textStyles, isLoading}) => {
   return (
       <TouchableOpacity
           onPress={handlePress}

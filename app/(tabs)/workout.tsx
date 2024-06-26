@@ -1,8 +1,7 @@
 import {View, Text, ScrollView, FlatList} from "react-native";
-import React, {useEffect, useState} from "react";
 import {Redirect, router} from "expo-router";
 import {SafeAreaView} from "react-native-safe-area-context";
-import {icons, images} from "../../constants";
+import { images} from "../../constants";
 import WorkoutButton from "@/components/WorkoutButton";
 import {getData} from "@/app/apiService/retrieveData";
 

@@ -1,9 +1,17 @@
 import {TouchableOpacity, Text, Image, GestureResponderEvent, ImageSourcePropType, View} from "react-native";
 import React from "react";
-import {icons, images} from "../constants";
+import {icons} from "../constants";
 
-// @ts-ignore
-const ExerciseButton = ({title, handlePress, containerStyles, textStyles, isLoading, image}) => {
+type ExerciseButtonProps = {
+    title: string;
+    handlePress: (event: GestureResponderEvent) => void;
+    containerStyles?: string;
+    textStyles?: string;
+    isLoading?: boolean;
+    image: ImageSourcePropType;
+}
+
+const ExerciseButton: React.FC<ExerciseButtonProps> = ({title, handlePress, containerStyles, textStyles, isLoading, image}) => {
     return (
         <TouchableOpacity
             onPress={handlePress}

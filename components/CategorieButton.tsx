@@ -1,10 +1,16 @@
 import {TouchableOpacity, Text, Image, GestureResponderEvent, ImageSourcePropType} from "react-native";
 import React from "react";
-import {opacity} from "react-native-reanimated/lib/typescript/reanimated2/Colors";
 
+type CategorieButtonProps = {
+    title: string,
+    handlePress: (event: GestureResponderEvent) => void,
+    containerStyles?: string,
+    textStyles?: string,
+    isLoading?: boolean,
+    icon: ImageSourcePropType
+}
 
-// @ts-ignore
-const CategorieButton = ({title, handlePress, containerStyles, textStyles, isLoading, icon}) => {
+const CategorieButton: React.FC<CategorieButtonProps> = ({title, handlePress, containerStyles, textStyles, isLoading, icon}) => {
     return (
         <TouchableOpacity
             onPress={handlePress}
