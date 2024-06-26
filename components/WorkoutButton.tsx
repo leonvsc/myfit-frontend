@@ -1,10 +1,17 @@
 import {TouchableOpacity, Text, Image, GestureResponderEvent, ImageSourcePropType, View} from "react-native";
 import React from "react";
 
-// TODO: Add type for props.
+type WorkoutButtonProps = {
+    title: string,
+    secondaryTitle: string,
+    handlePress: (event: GestureResponderEvent) => void,
+    containerStyles: string,
+    textStyles?: string,
+    isLoading?: boolean,
+    image: ImageSourcePropType
+}
 
-// @ts-ignore
-const WorkoutButton = ({title, secondaryTitle, handlePress, containerStyles, textStyles, isLoading, image}) => {
+const WorkoutButton: React.FC<WorkoutButtonProps> = ({title, secondaryTitle, handlePress, containerStyles, textStyles, isLoading, image}) => {
     return (
         <TouchableOpacity
             onPress={handlePress}
