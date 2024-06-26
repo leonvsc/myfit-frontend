@@ -1,9 +1,8 @@
 import {Image, Text, View} from "react-native";
 import React from "react";
 import {SafeAreaView} from "react-native-safe-area-context";
-import {icons, images} from "../../constants";
+import { images} from "../../constants";
 import {useLocalSearchParams} from "expo-router";
-import CategorieButton from "@/components/CategorieButton";
 import ExerciseDetailsButton from "@/components/ExerciseDetailsButton";
 
 

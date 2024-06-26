@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import {SafeAreaView} from "react-native-safe-area-context";
 import SearchField from "@/components/SearchField";
 import SearchResult from "@/components/SearchResult";
-import {icons, images} from "../../constants";
+import {icons} from "../../constants";
 
 
 const Search = () => {

@@ -1,8 +1,8 @@
 import {View, Text, ScrollView} from "react-native";
 import React from "react";
-import {Redirect, router} from "expo-router";
+import { router} from "expo-router";
 import {SafeAreaView} from "react-native-safe-area-context";
-import {icons, images} from "../../constants";
+import { images} from "../../constants";
 import WorkoutButton from "@/components/WorkoutButton";
 
 const navigateToDetails = (workoutId: number) => {

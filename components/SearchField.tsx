@@ -1,8 +1,7 @@
-import {View, Text, TextInput, TouchableOpacity, Image} from "react-native";
+import {View, TextInput, TouchableOpacity, Image} from "react-native";
 import React, {useState} from "react";
 
-import {icons, images} from "../constants";
-import {set} from "yaml/dist/schema/yaml-1.1/set";
+import {icons} from "../constants";
 
 
 type SearchFieldProps = {
