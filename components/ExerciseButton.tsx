@@ -2,10 +2,16 @@ import {TouchableOpacity, Text, Image, GestureResponderEvent, ImageSourcePropTyp
 import React from "react";
 import {icons, images} from "../constants";
 
-// TODO: Add type for props
+type ExerciseButtonProps = {
+    title: string;
+    handlePress: (event: GestureResponderEvent) => void;
+    containerStyles?: string;
+    textStyles?: string;
+    isLoading?: boolean;
+    image: ImageSourcePropType;
+}
 
-// @ts-ignore
-const ExerciseButton = ({title, handlePress, containerStyles, textStyles, isLoading, image}) => {
+const ExerciseButton: React.FC<ExerciseButtonProps> = ({title, handlePress, containerStyles, textStyles, isLoading, image}) => {
     return (
         <TouchableOpacity
             onPress={handlePress}

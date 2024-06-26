@@ -1,10 +1,15 @@
 import {TouchableOpacity, Text} from "react-native";
 import React from "react";
 
-// TODO: Add type for props
+type Button2Props = {
+    title: string,
+    handlePress: () => void,
+    containerStyles?: string,
+    textStyles?: string,
+    isLoading?: boolean
+}
 
-// @ts-ignore
-const Button2 = ({title, handlePress, containerStyles, textStyles, isLoading}) => {
+const Button2: React.FC<Button2Props>  = ({title, handlePress, containerStyles, textStyles, isLoading}) => {
     return (
         <TouchableOpacity
             onPress={handlePress}
