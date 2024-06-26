@@ -41,7 +41,7 @@ const WorkoutDetails = () => {
     // TODO: Only exercises needs to be scrollable
     return (
         <SafeAreaView className="mb-5">
-            <ScrollView>
+            <ScrollView className="lg:max-h-screen">
             <View className="ml-5 mr-5">
                 <View className="flex flex-row items-center">
                     <Image source={icons.dumbbell} resizeMode="contain" className="w-16 h-16 mr-5"/>
