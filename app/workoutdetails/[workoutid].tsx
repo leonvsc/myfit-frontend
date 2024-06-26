@@ -13,16 +13,6 @@ import {getData} from "@/app/apiService/retrieveData";
 
 // TODO: Make API call to get workout details
 
-const workoutDetails = {
-    '1': { title: 'Chest', secondaryTitle: 'A chest workout', image: images.sportschool },
-    '2': { title: 'Leg', secondaryTitle: 'A leg workout', image: images.sportschool },
-    '3': { title: 'Ab', secondaryTitle: 'A ab workout', image: images.sportschool },
-    '4': { title: 'Arm', secondaryTitle: 'A arm workout', image: images.sportschool },
-    '5': { title: 'Full body', secondaryTitle: 'A full body workout', image: images.sportschool },
-    '6': { title: 'Warming up', secondaryTitle: 'A warming up workout', image: images.sportschool },
-    '7': { title: 'Cooling down', secondaryTitle: 'A cooling down workout', image: images.sportschool },
-};
-
 const navigateToDetails = (exerciseId: number) => {
     router.push(`/exercisedetails/${exerciseId}`);
 };
@@ -39,7 +29,6 @@ const WorkoutDetails = () => {
     //     );
     // }
 
-    // TODO: Make API call to get exercises and put it in a flat list
     return (
         <SafeAreaView className="mb-5">
             <ScrollView>
