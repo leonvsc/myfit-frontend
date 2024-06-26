@@ -1,6 +1,6 @@
 import {TouchableOpacity, Text, Image, GestureResponderEvent, ImageSourcePropType, View} from "react-native";
 import React from "react";
-import {icons, images} from "../constants";
+import {icons} from "../constants";
 
 type ExerciseButtonProps = {
     title: string;
