@@ -15,7 +15,7 @@ const Workout = () => {
             <View className="ml-5 mr-5">
                 <Text className="font-pbold text-2xl mt-2 mb-3">Workouts</Text>
             </View>
-            <ScrollView>
+            <ScrollView className="lg:max-h-screen">
                 <WorkoutButton handlePress={() => navigateToDetails(1)} containerStyles="mr-5 ml-5" title="Chest" secondaryTitle="A chest workout"  image={images.sportschool} textStyles={undefined} isLoading={undefined}/>
                 <WorkoutButton handlePress={() => navigateToDetails(2)} containerStyles="mr-5 ml-5" title="Leg" secondaryTitle="A leg workout"  image={images.sportschool} textStyles={undefined} isLoading={undefined}/>
                 <WorkoutButton handlePress={() => navigateToDetails(3)} containerStyles="mr-5 ml-5" title="Ab" secondaryTitle="A ab workout"  image={images.sportschool} textStyles={undefined} isLoading={undefined}/>
