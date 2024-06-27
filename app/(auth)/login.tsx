@@ -1,56 +1,31 @@
-import {View, Text} from "react-native";
-import React, {useState} from "react";
-import {SafeAreaView} from "react-native-safe-area-context";
-import FormField from "@/components/FormField";
-import CustomButton from "@/components/CustomButton";
-import {Link} from "expo-router";
+import {useEffect, useCallback, useMemo} from "react";
+import {useNavigate} from "react-router-dom";
+import {Hanko, register} from "@teamhanko/hanko-elements";
 
-const Login = () => {
-    const [form, setForm] = useState({
-        email: "",
-        password: ""
-    });
 
-    const [isSubmitting, setIsSubmitting] = useState(false);
+const hankoUrl = "https://ebc6b9fe-ca5f-4256-8ef9-a3907104f110.hanko.io"
 
-    const submit = () => {
+export default function HankoAuth() {
+    const navigate = useNavigate();
+    const hanko = useMemo(() => new Hanko(hankoUrl), []);
 
-    }
+    const redirectAfterLogin = useCallback(() => {
+        navigate("/home");
+    }, [navigate]);
 
-    return (
-        <SafeAreaView>
-            <View className="justify-center w-full min-h-[85vh] px-4">
-            <Text className="text-3xl font-bold">Login to MyFit</Text>
-                <FormField
-                    title="Email"
-                    value={form.email}
-                    handleChangeText={(value: any) => setForm({...form, email: value})}
-                    otherStyles="mt-7"
-                    keyboardType="email-address" placeholder="Email" />
+    useEffect(
+        () =>
+            hanko.onAuthFlowCompleted(() => {
+                redirectAfterLogin();
+            }),
+        [hanko, redirectAfterLogin]
+    );
 
-                <FormField
-                    title="Password"
-                    value={form.password}
-                    handleChangeText={(value: any) => setForm({...form, password: value})}
-                    otherStyles="mt-7"  placeholder="Password"/>
+    useEffect(() => {
+        register(hankoUrl).catch((error) => {
+            // handle error
+        });
+    }, []);
 
-                <CustomButton
-                    title="Login"
-                    handlePress={submit}
-                    containerStyles="mt-7"
-                    isLoading={isSubmitting}
-                    textStyles={undefined}
-                />
-
-                <View className="justify-center pt-5 flex-row gap-2">
-                    <Text className="text-lg text-gray-900 font-pregular">
-                        Don't have an account?
-                    </Text>
-                    <Link href="/signup" className="text-lg font-psemibold ">Sign Up</Link>
-                </View>
-            </View>
-        </SafeAreaView>
-    )
+    return <hanko-auth/>;
 }
-
-export default Login;
