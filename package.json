@@ -17,7 +17,7 @@
   "dependencies": {
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^6.0.2",
-    "@teamhanko/hanko-elements": "^0.11.0",
+    "axios": "^1.7.2",
     "expo": "~51.0.10",
     "expo-constants": "~16.0.2",
     "expo-font": "~12.0.6",
@@ -27,6 +27,7 @@
     "expo-status-bar": "~1.12.1",
     "expo-system-ui": "~3.0.5",
     "expo-web-browser": "~13.0.3",
+    "formfield": "^0.1.0",
     "metro-config": "^0.80.9",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
