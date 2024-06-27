@@ -31,7 +31,6 @@ const WorkoutDetails = () => {
 
     return (
         <SafeAreaView className="mb-5">
-            <ScrollView>
                 <View className="ml-5 mr-5">
                     <View className="flex flex-row items-center">
                         <Image source={icons.dumbbell} resizeMode="contain" className="w-16 h-16 mr-5"/>
@@ -49,7 +48,7 @@ const WorkoutDetails = () => {
 
                     <FlatList
                         data={getData("exercises")}
-                        keyExtractor={({_id}) => _id}
+                        keyExtractor={({id}) => id}
                         renderItem={({item}) => (
                             <View className="w-full">
                                 <ExerciseButton title={item.name} handlePress={() => {navigateToDetails(1)
@@ -59,7 +58,6 @@ const WorkoutDetails = () => {
                     />
                     </View>
                 </View>
-            </ScrollView>
         </SafeAreaView>
     );
 }

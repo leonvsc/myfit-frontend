@@ -20,17 +20,15 @@ const Workout = () => {
                 <View className="ml-5 mr-5">
                     <Text className="font-pbold text-2xl mt-2 mb-3">Workouts</Text>
                 </View>
-                <ScrollView>
                     <FlatList
                         data={getData("workouts")}
-                        keyExtractor={({_id}) => _id}
+                        keyExtractor={({id}) => id}
                         renderItem={({item}) => (
-                            <WorkoutButton handlePress={() => navigateToDetails(item.id)} containerStyles="mr-5 ml-5"
+                            <WorkoutButton handlePress={() => navigateToDetails(Number(item.id))} containerStyles="mr-5 ml-5"
                                            title={item.name} secondaryTitle="A chest workout" image={images.sportschool}
                                            textStyles={undefined} isLoading={undefined}/>
                         )}
                     />
-                </ScrollView>
             </SafeAreaView>
         )
     }
