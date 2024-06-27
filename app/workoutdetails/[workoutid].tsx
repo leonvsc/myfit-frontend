@@ -14,13 +14,9 @@ import {useRoute} from "@react-navigation/core";
 
 // TODO: Make API call to get workout details
 
-const navigateToDetails = (exerciseId: number) => {
+const navigateToDetails = (exerciseId: string) => {
     router.push(`/exercisedetails/${exerciseId}`);
 };
-
-const workoutById = (id: string) => {
-    getWorkoutById(id);
-}
 
 const WorkoutDetails = () => {
     const local = useLocalSearchParams<{workoutid:string}>();
@@ -60,7 +56,7 @@ const WorkoutDetails = () => {
                         keyExtractor={({_id}) => _id}
                         renderItem={({item}) => (
                             <View className="w-full">
-                                <ExerciseButton title={item.name} handlePress={() => {navigateToDetails(1)
+                                <ExerciseButton title={item.name} handlePress={() => {navigateToDetails(item._id)
                                 }} containerStyles="" textStyles={undefined} isLoading={undefined} image={icons.dumbbell}/>
                             </View>
                         )}
