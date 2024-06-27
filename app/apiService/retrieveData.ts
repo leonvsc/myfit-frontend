@@ -7,7 +7,7 @@ const getData = (endpoint : string) => {
 
     const getExercises = async () => {
         try {
-            const response = await fetch('https://Api.myfitavans.xyz/' + endpoint);
+            const response = await fetch('https://api.myfitavans.xyz/' + endpoint);
             const json = await response.json();
             setData(json.data);
         } catch (error) {
