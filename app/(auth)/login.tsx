@@ -3,7 +3,6 @@ import { SafeAreaView, View, Text, TextInput, Button, ActivityIndicator } from '
 import axios, { AxiosError } from 'axios';
 
 const hankoUrl = "https://ebc6b9fe-ca5f-4256-8ef9-a3907104f110.hanko.io";
-const origin = "https://myfitavans.xyz";
 
 const Login: React.FC = () => {
     const [form, setForm] = useState<{ email: string }>({ email: "" });
@@ -12,16 +11,9 @@ const Login: React.FC = () => {
     const [userId, setUserId] = useState<string | null>(null);
     const [passcode, setPasscode] = useState<string>("");
 
-    const axiosConfig = {
-        headers: {
-            'Origin': origin,
-            'Content-Type': 'application/json'
-        }
-    };
-
     const checkUserExists = async () => {
         try {
-            const response = await axios.post(`${hankoUrl}/users`, { email: form.email }, axiosConfig);
+            const response = await axios.post(`${hankoUrl}/users`, { email: form.email });
             if (response.status === 200 && response.data) {
                 setUserId(response.data.id);
                 sendPasscode(response.data.id);
@@ -38,7 +30,7 @@ const Login: React.FC = () => {
 
     const createUser = async () => {
         try {
-            const response = await axios.post(`${hankoUrl}/users`, { email: form.email }, axiosConfig);
+            const response = await axios.post(`${hankoUrl}/users`, { email: form.email });
             if (response.status === 200) {
                 setUserId(response.data.id);
                 sendPasscode(response.data.id);
@@ -51,7 +43,7 @@ const Login: React.FC = () => {
 
     const sendPasscode = async (id: string) => {
         try {
-            const response = await axios.post(`${hankoUrl}/passcode/login/initialize`, { user_id: id }, axiosConfig);
+            const response = await axios.post(`${hankoUrl}/passcode/login/initialize`, { user_id: id });
             if (response.status === 200) {
                 setPasscodeSent(true);
             }
@@ -66,7 +58,7 @@ const Login: React.FC = () => {
             const response = await axios.post(`${hankoUrl}/passcode/verify`, {
                 passcode_id: userId,
                 passcode: passcode
-            }, axiosConfig);
+            } );
             if (response.status === 200) {
                 console.log("Login successful", response.data);
             }
