@@ -5,13 +5,14 @@ import { images} from "../../constants";
 import WorkoutButton from "@/components/WorkoutButton";
 import {getData} from "@/app/apiService/retrieveData";
 
-const navigateToDetails = (workoutId: number) => {
+const navigateToDetails = (workoutId: string) => {
     router.push(`/workoutdetails/${workoutId}`);
 };
 
 type Workout = {
-    id: string;
+    _id: string;
     name: string;
+    description: string;
 };
 
 const Workout = () => {
@@ -20,17 +21,15 @@ const Workout = () => {
                 <View className="ml-5 mr-5">
                     <Text className="font-pbold text-2xl mt-2 mb-3">Workouts</Text>
                 </View>
-                <ScrollView>
                     <FlatList
                         data={getData("workouts")}
                         keyExtractor={({_id}) => _id}
                         renderItem={({item}) => (
-                            <WorkoutButton handlePress={() => navigateToDetails(item.id)} containerStyles="mr-5 ml-5"
-                                           title={item.name} secondaryTitle="A chest workout" image={images.sportschool}
+                            <WorkoutButton handlePress={() => navigateToDetails(item._id)} containerStyles="mr-5 ml-5"
+                                           title={item.name} secondaryTitle={item.description} image={images.sportschool}
                                            textStyles={undefined} isLoading={undefined}/>
                         )}
                     />
-                </ScrollView>
             </SafeAreaView>
         )
     }
