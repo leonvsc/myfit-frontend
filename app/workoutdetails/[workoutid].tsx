@@ -9,7 +9,8 @@ import ExerciseButton from "@/components/ExerciseButton";
 import Workout from "@/app/(tabs)/workout";
 import dayjs from "dayjs";
 import WorkoutButton from "@/components/WorkoutButton";
-import {getData} from "@/app/apiService/retrieveData";
+import {getData, getWorkoutById} from "@/app/apiService/retrieveData";
+import {useRoute} from "@react-navigation/core";
 
 // TODO: Make API call to get workout details
 
@@ -17,13 +18,21 @@ const navigateToDetails = (exerciseId: number) => {
     router.push(`/exercisedetails/${exerciseId}`);
 };
 
+const workoutById = (id: string) => {
+    getWorkoutById(id);
+}
+
 const WorkoutDetails = () => {
+    const local = useLocalSearchParams<{workoutid:string}>();
+    const workoutId = local.workoutid as keyof typeof local;
+
+    const { data, isLoading } = getWorkoutById(workoutId);
 
     // if (!details) {
     //     return (
     //         <SafeAreaView>
     //             <View>
-    //                 <Text>Workout not found.</Text>
+    //                 <Text>Types not found.</Text>
     //             </View>
     //         </SafeAreaView>
     //     );
@@ -35,10 +44,10 @@ const WorkoutDetails = () => {
                     <View className="flex flex-row items-center">
                         <Image source={icons.dumbbell} resizeMode="contain" className="w-16 h-16 mr-5"/>
                         {/*TODO: change test to information about the workout*/}
-                        <Text className="font-pbold text-2xl mt-2 mb-3">test</Text>
+                        <Text className="font-pbold text-2xl mt-2 mb-3">{data?.name}</Text>
                     </View>
                     {/*TODO: change test to information about the workout*/}
-                    <Text className="text-lg">test</Text>
+                    <Text className="text-lg">{data?.description}</Text>
                     <CustomButton title="Start workout" handlePress={() => {
                     }} containerStyles="mt-3" textStyles={undefined} isLoading={undefined}/>
                 </View>
@@ -48,7 +57,7 @@ const WorkoutDetails = () => {
 
                     <FlatList
                         data={getData("exercises")}
-                        keyExtractor={({id}) => id}
+                        keyExtractor={({_id}) => _id}
                         renderItem={({item}) => (
                             <View className="w-full">
                                 <ExerciseButton title={item.name} handlePress={() => {navigateToDetails(1)

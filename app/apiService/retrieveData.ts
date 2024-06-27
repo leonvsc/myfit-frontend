@@ -24,4 +24,27 @@ const getData = (endpoint : string) => {
     return data;
 }
 
-export {getData};
+const getWorkoutById = (id: string): { data: Workout | null; isLoading: boolean } => {
+    const [isLoading, setLoading] = useState(true);
+    const [data, setData] = useState<Workout | null>(null);
+
+    useEffect(() => {
+        const fetchWorkoutById = async () => {
+            try {
+                const response = await fetch(`https://api.myfitavans.xyz/workouts/${id}`);
+                const json = await response.json();
+                setData(json.data);
+            } catch (error) {
+                console.error('Error fetching workout details:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchWorkoutById();
+    }, [id]);
+
+    return { data, isLoading };
+};
+
+export {getData, getWorkoutById};
